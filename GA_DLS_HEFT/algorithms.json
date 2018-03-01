@@ -1,0 +1,14 @@
+[
+  {
+    "class": "pysimgrid.simdag.algorithms.DLS",
+    "name": "DLS"
+  },
+  {
+    "class": "pysimgrid.simdag.algorithms.HEFT",
+    "name": "HEFT"
+  },
+  {
+    "class": "pysimgrid.simdag.algorithms.GA",
+    "name": "GA"
+  }
+]
