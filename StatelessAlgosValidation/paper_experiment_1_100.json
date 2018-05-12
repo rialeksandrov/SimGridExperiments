@@ -1,0 +1,165 @@
+{
+  "platforms" : [
+    {
+      "path" : "plat_exp1_5",
+      "name" : "plat1_5",
+      "parameters" : {
+        "generate" : true,
+        "args" : "100 cluster 5 1-4 100 100 --include_master"
+      }
+    },
+    {
+      "path" : "plat_exp1_10",
+      "name" : "plat1_10",
+      "parameters" : {
+        "generate" : true,
+        "args" : "100 cluster 10 1-4 100 100 --include_master"
+      }
+    },
+    {
+      "path" : "plat_exp1_20",
+      "name" : "plat1_20",
+      "parameters" : {
+        "generate" : true,
+        "args" : "100 cluster 20 1-4 100 100 --include_master"
+      }
+    },
+    {
+      "path" : "plat_exp1_inf_5",
+      "name" : "plat_inf1_5",
+      "parameters" : {
+        "generate" : true,
+        "args" : "100 cluster 5 1-4 1e12 0 --include_master"
+      }
+    },
+    {
+      "path" : "plat_exp1_inf_10",
+      "name" : "plat_inf1_10",
+      "parameters" : {
+        "generate" : true,
+        "args" : "100 cluster 10 1-4 1e12 0 --include_master"
+      }
+    },
+    {
+      "path" : "plat_exp1_inf_20",
+      "name" : "plat_inf1_20",
+      "parameters" : {
+        "generate" : true,
+        "args" : "100 cluster 20 1-4 1e12 0 --include_master"
+      }
+    }
+  ],
+
+  "tasks" : [
+    {
+      "path" : "CyberShake",
+      "name" : "CyberShake",
+      "parameters" : {
+        "generate" : false
+      }
+    },
+    {
+      "path" : "Epigenomics",
+      "name" : "Epigenomics",
+      "parameters" : {
+        "generate" : false
+      }
+    },
+    {
+      "path" : "Inspiral",
+      "name" : "Inspiral",
+      "parameters" : {
+        "generate" : false
+      }
+    },
+    {
+      "path" : "Montage",
+      "name" : "Montage",
+      "parameters" : {
+        "generate" : false
+      }
+    }
+  ],
+
+  "simulation" : {
+    "name" : "paper_experiment_1_100",
+    "randomized": true,
+    "changer_parameters" : {
+      "type" : "Simple",
+      "percent" : 100
+    },
+    "print_plotly_gantt" : false,
+    "plotly_login" : {
+      "username": "mermyself",
+      "token": "__"
+    },
+    "print_matplotlib_gantt" : false
+  },
+
+  "algorithms" : [
+    {
+      "class": "pysimgrid.simdag.algorithms.OLB",
+      "name": "OLB"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.MCT",
+      "name": "MCT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.FixedMCT",
+      "name": "FixedMCT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.FixedMCT2",
+      "name": "FixedMCT2"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicMCT",
+      "name": "DynamicMCT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.BatchMin",
+      "name": "BatchMin"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicBatchMin",
+      "name": "DynamicBatchMin"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.BatchMax",
+      "name": "BatchMax"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicBatchMax",
+      "name": "DynamicBatchMax"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.BatchSufferage",
+      "name": "Sufferage"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicBatchSufferage",
+      "name": "DynamicSufferage"
+    },
+     {
+      "class": "pysimgrid.simdag.algorithms.HCPT",
+      "name": "HCPT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.HEFT",
+      "name": "HEFT"
+    },
+     {
+      "class": "pysimgrid.simdag.algorithms.Lookahead",
+      "name": "Lookahead"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.PEFT",
+      "name": "PEFT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DLS",
+      "name": "DLS"
+    }
+  ]
+}
