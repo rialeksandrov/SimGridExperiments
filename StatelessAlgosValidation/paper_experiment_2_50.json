@@ -1,0 +1,226 @@
+{
+  "platforms" : [
+    {
+      "path" : "plat_exp2",
+      "name" : "plat2",
+      "parameters" : {
+        "generate" : true,
+        "args" : "1 cluster 10 1-4 100 100 --include_master"
+      }
+    },
+    {
+      "path" : "plat_exp2_inf",
+      "name" : "plat_inf2",
+      "parameters" : {
+        "generate" : true,
+        "args" : "1 cluster 10 1-4 1e12 0 --loopback_bandwidth=1e12 --loopback_latency=0 --include_master"
+      }
+    }
+  ],
+
+  "tasks" : [
+    {
+      "path" : "tasks_exp2_05_1",
+      "name" : "tasks2_05_1",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.5 --density 0.1 --jump 2 --force_ccr 1 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_065_1",
+      "name" : "tasks2_065_1",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.65 --density 0.1 --jump 2 --force_ccr 1 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_08_1",
+      "name" : "tasks2_08_1",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.8 --density 0.1 --jump 2 --force_ccr 1 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_05_10",
+      "name" : "tasks2_05_10",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.5 --density 0.1 --jump 2 --force_ccr 10 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_065_10",
+      "name" : "tasks2_065_10",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.65 --density 0.1 --jump 2 --force_ccr 10 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_08_10",
+      "name" : "tasks2_08_10",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.8 --density 0.1 --jump 2 --force_ccr 10 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_05_100",
+      "name" : "tasks2_05_100",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.5 --density 0.1 --jump 2 --force_ccr 100 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_065_100",
+      "name" : "tasks2_065_100",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.65 --density 0.1 --jump 2 --force_ccr 100 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_08_100",
+      "name" : "tasks2_08_100",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.8 --density 0.1 --jump 2 --force_ccr 100 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_05_500",
+      "name" : "tasks2_05_500",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.5 --density 0.1 --jump 2 --force_ccr 500 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_065_500",
+      "name" : "tasks2_065_500",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.65 --density 0.1 --jump 2 --force_ccr 500 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_08_500",
+      "name" : "tasks2_08_500",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.8 --density 0.1 --jump 2 --force_ccr 500 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_05_1000",
+      "name" : "tasks2_05_1000",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.5 --density 0.1 --jump 2 --force_ccr 1000 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_065_1000",
+      "name" : "tasks2_065_1000",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.65 --density 0.1 --jump 2 --force_ccr 1000 --repeat 100"
+      }
+    },
+    {
+      "path" : "tasks_exp2_08_1000",
+      "name" : "tasks2_08_1000",
+      "parameters" : {
+        "generate" : true,
+        "args" : "--count 100 --fat 0.8 --density 0.1 --jump 2 --force_ccr 1000 --repeat 100"
+      }
+    }
+
+  ],
+
+  "simulation" : {
+    "name" : "paper_experiment_2_50",
+    "randomized": true,
+    "changer_parameters" : {
+      "type" : "Simple",
+      "percent" : 50
+    },
+    "print_plotly_gantt" : false,
+    "plotly_login" : {
+      "username": "mermyself",
+      "token": "__"
+    },
+    "print_matplotlib_gantt" : false
+  },
+
+  "algorithms" : [
+    {
+      "class": "pysimgrid.simdag.algorithms.OLB",
+      "name": "OLB"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.MCT",
+      "name": "MCT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.FixedMCT",
+      "name": "FixedMCT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.FixedMCT2",
+      "name": "FixedMCT2"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicMCT",
+      "name": "DynamicMCT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.BatchMin",
+      "name": "BatchMin"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicBatchMin",
+      "name": "DynamicBatchMin"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.BatchMax",
+      "name": "BatchMax"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicBatchMax",
+      "name": "DynamicBatchMax"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.BatchSufferage",
+      "name": "Sufferage"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DynamicBatchSufferage",
+      "name": "DynamicSufferage"
+    },
+     {
+      "class": "pysimgrid.simdag.algorithms.HCPT",
+      "name": "HCPT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.HEFT",
+      "name": "HEFT"
+    },
+     {
+      "class": "pysimgrid.simdag.algorithms.Lookahead",
+      "name": "Lookahead"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.PEFT",
+      "name": "PEFT"
+    },
+    {
+      "class": "pysimgrid.simdag.algorithms.DLS",
+      "name": "DLS"
+    }
+  ]
+}
